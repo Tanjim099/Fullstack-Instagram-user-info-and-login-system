@@ -129,9 +129,9 @@
         const nameOfUser = document.getElementById("name").value
         const userBio = document.getElementById("bio").value
 
-        if (!userName && !userEmail && !userPassword && !nameOfUser && userBio) {
-            alert("All input fields are required")
-            return
+        if (!userName || !userEmail || !userPassword || !nameOfUser || !userBio) {
+            return alert("All input fields are required")
+            // return
         }
 
         const userData = {
@@ -142,6 +142,7 @@
             username: userName
         }
 
+        console.log(userData)
         registerUser(userData)
     })
 
@@ -156,7 +157,7 @@
             const data = await resp.json();
             console.log(data)
 
-            window.location.href = "http://localhost:5500/client/login.html"
+            window.location.href = "http://localhost:5500/client/login.html";
         } catch (error) {
             console.log(error.message)
         }

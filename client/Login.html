@@ -6,16 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram Login</title>
     <style>
+        #Container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
         #user {
             display: flex;
             flex-direction: column;
             width: 300px;
             padding: 25px;
-            height: 300px;
+            /* height: 350px; */
             align-content: center;
             justify-content: center;
             text-align: center;
-            border-radius: 10px;
+            border-radius: 2px;
             border: 1px solid rgb(137, 136, 115);
             gap: 5px;
         }
@@ -34,14 +40,15 @@
 
         input::placeholder {
             color: rgb(137, 136, 115);
-            padding-left: 10px;
+            /* padding-left: 5px; */
         }
 
 
         #user input,
         #user button {
             height: 30px;
-            padding-left: 5px;
+            /* padding: 7px 0px; */
+            padding-left: 10px;
             background-color: rgb(76, 181, 249);
             color: white;
             outline: none;
@@ -85,12 +92,19 @@
             color: rgb(76, 181, 249);
         }
 
+        #forgotPass {
+            font-size: 13px;
+            color: #6357ae;
+            text-decoration: none;
+        }
+
         .other {
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             gap: 5px;
+            cursor: pointer;
         }
 
         .other img {
@@ -107,6 +121,43 @@
         .or span {
             color: gray;
         }
+
+        #registerBox {
+            width: 300px;
+            padding: 10px 25px;
+            border-radius: 2px;
+            border: 1px solid rgb(137, 136, 115);
+        }
+
+        #registerBox p {
+            font-size: 14px;
+            color: rgb(57, 57, 57);
+            text-align: center;
+        }
+
+        #registerBox p a {
+            color: rgb(0, 136, 255);
+            text-decoration: none;
+        }
+
+        #getApp {
+            width: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        #gp img {
+            width: 130px;
+            border-radius: 10px;
+        }
+
+        #ms img {
+            width: 130px;
+            height: 38px;
+            border-radius: 10px;
+        }
     </style>
 </head>
 
@@ -116,13 +167,72 @@
             <img class="insta-img" src="instagram.png" />
             <input type="text" id="username" name="username" placeholder='Enter your username' />
             <input type="password" id="password" name="password" placeholder='Enter your password' />
-            <button>Log in</button>
+            <button id="submit" type="submit">Log in</button>
             <p class="or"><span>-------</span> OR <span>-------</span></p>
-            <div class="other"><img src="facebook.png" width="10px" alt=""><a
-                    href="https://www.facebook.com/login.php?skip_api_login=1&api_key=124024574287414&kid_directed_site=0&app_id=124024574287414&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Foauth%3Fclient_id%3D124024574287414%26locale%3Den_GB%26redirect_uri%3Dhttps%253A%252F%252Fwww.instagram.com%252Faccounts%252Fsignup%252F%26response_type%3Dcode%252Cgranted_scopes%26scope%3Demail%26state%3D%257B%2522fbLoginKey%2522%253A%25221e3943i13zhh7pbsq736776ex1157ur90d8d2spc4jbz510rd53j%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252Ffxcal%252Fdisclosure%252F%253Fnext%253D%25252F%2522%257D%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Dce0fb346-0ad4-4fdb-9f81-40f0feef7a5f%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fsignup%2F%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%2522fbLoginKey%2522%253A%25221e3943i13zhh7pbsq736776ex1157ur90d8d2spc4jbz510rd53j%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252Ffxcal%252Fdisclosure%252F%253Fnext%253D%25252F%2522%257D%23_%3D_&display=page&locale=en_GB&pl_dbl=0">Login
-                    with Facebook</a></div>
+            <div class="other" id="loginWitFacebook"><img src="facebook.png" width="10px" alt="">
+                <p>Login with Facebook</p>
+            </div>
+            <a id="forgotPass" href="#">Forgotten your Password</a>
+        </div>
+        <div id="registerBox">
+            <p>Don't have an account? <a href="Register.html">Register</a></p>
+        </div>
+        <p style="margin: 0px; padding: 0px;">Get the app.</p>
+        <div id="getApp">
+            <div id="gp">
+                <a
+                    href="https://l.instagram.com/?u=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.instagram.android%26referrer%3Dig_mid%253D2CB81F68-6C90-42A2-893D-9989DE964AF4%2526utm_campaign%253DloginPage%2526utm_content%253Dlo%2526utm_source%253Dinstagramweb%2526utm_medium%253Dbadge&e=AT3jQUCnYO3Vtmvme3siXD13EgGrcCnOFL3zxtGyN8juEPtIah0MMeE8XGqncj12NKDzePptGsk6wzcSxs43ILlwlKepETRio-RAtanuFO1lksH6VJA1Dtx8372XallrPKnlsPgGD7DXiHXvunJn-g4mbGgWe3uJegrj3A"><img
+                        src="https://static.cdninstagram.com/rsrc.php/v3/yz/r/c5Rp7Ym-Klz.png" alt=""></a>
+            </div>
+            <div id="ms">
+                <a
+                    href="ms-windows-store://pdp/?productid=9nblggh5l9xt&referrer=appbadge&source=www.instagram.com&mode=mini&pos=0%2C0%2C1920%2C1020"><img
+                        src="https://static.cdninstagram.com/rsrc.php/v3/yu/r/EHY6QnZYdNX.png" alt=""></a>
+            </div>
         </div>
     </div>
 </body>
+
+<script>
+    const loginWitFacebook = document.getElementById("loginWitFacebook");
+    loginWitFacebook.addEventListener("click", () => {
+
+        const loginWithFaceookUrl = "https://www.facebook.com/login.php?skip_api_login=1&api_key=124024574287414&kid_directed_site=0&app_id=124024574287414&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Foauth%3Fclient_id%3D124024574287414%26locale%3Den_GB%26redirect_uri%3Dhttps%253A%252F%252Fwww.instagram.com%252Faccounts%252Fsignup%252F%26response_type%3Dcode%252Cgranted_scopes%26scope%3Demail%26state%3D%257B%2522fbLoginKey%2522%253A%25221e3943i13zhh7pbsq736776ex1157ur90d8d2spc4jbz510rd53j%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252Ffxcal%252Fdisclosure%252F%253Fnext%253D%25252F%2522%257D%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Dce0fb346-0ad4-4fdb-9f81-40f0feef7a5f%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fsignup%2F%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%2522fbLoginKey%2522%253A%25221e3943i13zhh7pbsq736776ex1157ur90d8d2spc4jbz510rd53j%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252Ffxcal%252Fdisclosure%252F%253Fnext%253D%25252F%2522%257D%23_%3D_&display=page&locale=en_GB&pl_dbl=0"
+        location.href = loginWithFaceookUrl
+    });
+
+    const formSubmit = document.getElementById("submit");
+    formSubmit.addEventListener("click", (event) => {
+        event.preventDefault();
+        const userName = document.getElementById("username").value
+        const userPassword = document.getElementById("password").value
+
+        const userData = {
+            username: userName,
+            password: userPassword
+        }
+
+        loginUser(userData)
+    });
+
+    const loginUser = async (playload) => {
+        try {
+            const resp = await fetch("http://localhost:5002/login", {
+                method: "POST",
+                credentials: "include",
+                redirect: "follow",
+                headers: { "content-type": "application/json" },
+                body: JSON.stringify(playload)
+            })
+            const data = await resp.json
+            console.log(data);
+
+            window.location.href = "http://localhost:5500/client/index.html";
+        } catch (error) {
+            console.log(error.message)
+        }
+    }
+
+</script>
 
 </html>
