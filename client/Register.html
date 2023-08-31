@@ -111,6 +111,10 @@
                 <label for="">Bio</label>
                 <input type="text" id="bio" name="bio" placeholder="Enter your bio">
             </div>
+            <div class="from-group">
+                <label for="">Profile</label>
+                <input type="text" id="avatar" name="avatar" placeholder="Enter your avatar">
+            </div>
             <button id="submit" type="submit" class="btn">SignUp</button>
         </form>
         <div class="links">
@@ -128,8 +132,9 @@
         const userPassword = document.getElementById("password").value
         const nameOfUser = document.getElementById("name").value
         const userBio = document.getElementById("bio").value
+        const avatar = document.getElementById("avatar").value
 
-        if (!userName || !userEmail || !userPassword || !nameOfUser || !userBio) {
+        if (!userName || !userEmail || !userPassword || !nameOfUser || !userBio || !avatar) {
             return alert("All input fields are required")
             // return
         }
@@ -139,7 +144,8 @@
             email: userEmail,
             bio: userBio,
             password: userPassword,
-            username: userName
+            username: userName,
+            avatar: avatar
         }
 
         console.log(userData)
@@ -148,9 +154,11 @@
 
     const registerUser = async (playload) => {
         try {
-            const resp = await fetch("http://localhost:5002/signup", {
+            const resp = await fetch("http://localhost:5003/signup", {
                 method: "POST",
-                headers: { "content-type": "application/json" },
+                headers: {
+                    "content-type": "application/json"
+                },
                 body: JSON.stringify(playload)
             })
 

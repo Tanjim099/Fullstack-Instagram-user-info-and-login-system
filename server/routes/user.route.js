@@ -10,7 +10,7 @@ userRoute.post("/signup", signUpValidator, userSignUp);
 
 userRoute.post("/login", loginValidator, userLogin);
 
-userRoute.get("/username", authenticateUser, getUserDetails);
+userRoute.get("/", authenticateUser, getUserDetails);
 
 module.exports = {
     userRoute
